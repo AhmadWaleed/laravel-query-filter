@@ -8,7 +8,7 @@ trait QueryScopes
      * Add query scope to model
      *
      * @param \Illuminate\Database\Eloquent\Builder $builder
-     * @param \QueryFilters\Queryable $query
+     * @param \AhmedWaleed\QueryFilter\Queryable $query
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */

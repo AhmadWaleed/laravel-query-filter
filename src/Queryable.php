@@ -2,8 +2,6 @@
 
 namespace AhmedWaleed\QueryFilter;
 
-use Illuminate\Database\Eloquent\Builder;
-
 interface Queryable
 {
     /**

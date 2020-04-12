@@ -2,8 +2,8 @@
 
 namespace AhmedWaleed\QueryFilter;
 
-use AhmedWaleed\QueryFilter\Console\MakeQueryScopeCommand;
 use Illuminate\Support\ServiceProvider;
+use AhmedWaleed\QueryFilter\Console\MakeQueryScopeCommand;
 
 class QueryFilterServiceProvider extends ServiceProvider
 {
