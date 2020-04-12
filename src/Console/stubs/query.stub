@@ -1,0 +1,22 @@
+<?php
+
+namespace {{ namespace }};
+
+use AhmedWaleed\QueryFilter\QueryScope;
+
+class {{ class }} extends QueryScope
+{
+    /**
+     * Add query to applicable model
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $builder
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function apply(Builder $builder)
+    {
+        //
+
+        return $builder;
+    }
+}
