@@ -48,7 +48,7 @@ class MakeQueryScopeCommand extends GeneratorCommand
      */
     protected function replaceNamespace(&$stub, $name)
     {
-        return str_replace(['{{ namespace }}', '{{namespace}}'], $this->getNamespace($name), $stub);
+        $stub = str_replace(['{{ namespace }}', '{{namespace}}'], $this->getNamespace($name), $stub);
 
         return $this;
     }
