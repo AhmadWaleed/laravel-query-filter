@@ -14,11 +14,11 @@ composer require ahmedwaleed/laravel-query-filter
 
 ### Create dedicated query scope class by running following command.
 ```bash
-php artisan make:query App/Queries/ScopeActiveUsersQuery
+php artisan make:query ScopeActiveUsersQuery
 ```
 
 ```php
-<?php
+// app/Queries/ScopeActiveUsersQuery.php
 
 namespace App\Queries;
 
@@ -33,7 +33,7 @@ class ScopeActiveUsersQuery extends QueryScope
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function apply(Builder $builder)
+    public function apply($builder)
     {
         //
 
@@ -48,7 +48,7 @@ Now you need to use `QueryScopes` trait inside your model on which you want to a
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model
+use Illuminate\Database\Eloquent\Model;
 use AhmedWaleed\QueryFilter\QueryScopes;
 
 class User extends Model
@@ -86,19 +86,19 @@ $users = User::addQuery(
 
 ### ::when($condition) method is optional you can skipe if you always want to execute query:
 ```php
-$users = User::addQuery(new ScopeActiveUsersQuery()))->get();
+$users = User::addQuery(new ScopeActiveUsersQuery())->get();
 ```
 
 ### you can pass addional data required for query through constructor:
 ```php
 // controller
-$data = ['limit' => 2, 'status' => request('active')];
+$data = ['limit' => 10, 'status' => request('active')];
 
-$users = User::addQuery(new ScopeActiveUsersQuery($data)))->get();
+$users = User::addQuery(new ScopeActiveUsersQuery($data))->get();
+```
 
+```php
 // App\Queries\ScopeActiveUsersQuery.php
-
-<?php
 
 namespace App\Queries;
 
@@ -113,7 +113,7 @@ class ScopeActiveUsersQuery extends QueryScope
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function apply(Builder $builder)
+    public function apply($builder)
     {
         $builder->whereStatus($this->data['status'] ?? 1)
           ->limit($this->data['limit'] ?? 50);
