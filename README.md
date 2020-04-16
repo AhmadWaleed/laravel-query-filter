@@ -73,6 +73,17 @@ public function index()
 //..
 ```
 
+### add multipple queries:
+```php
+
+$users = User::addQuery(
+    (new ScopeActiveUsersQuery())->when(request()->has('active'))
+)->addQuery(
+    (new ScopeLocationUsersQuery())->when(request()->has('location'))
+)->get();
+
+```
+
 ### ::when($condition) method is optional you can skipe if you always want to execute query:
 ```php
 $users = User::addQuery(new ScopeActiveUsersQuery()))->get();
