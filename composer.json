@@ -1,5 +1,5 @@
 {
-    "name": "ahmedwaleed/laravel-query-filters",
+    "name": "ahmedwaleed/laravel-query-filter",
     "authors": [
         {
             "name": "AhmadWaleed",
@@ -31,7 +31,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AhmedWaleed\\QueryFilter\\QueryFiltersServiceProvider"
+                "AhmedWaleed\\QueryFilter\\QueryFilterServiceProvider"
             ]
         }
     }

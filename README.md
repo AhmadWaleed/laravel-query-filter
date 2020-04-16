@@ -124,7 +124,7 @@ class ScopeActiveUsersQuery extends QueryScope
 ```
 
 ## A cooler usage
-For small query scope like above it maybe overkill but think what if you have a huge queries and request filters either it will grow your model or controller, this package is also apply single responsiblty principle so for every scope you have dedicated class and if future it will also be easy to maintane single query instead of parsing a big query with request filters.
+For small query scope like above it maybe overkill but think what if you have a huge queries and request filters either it will grow your model or controller, this package is also apply single responsiblty principle so for every scope you have dedicated class and in future it will also be easy to maintane single query instead of parsing a big query with request filters.
 
 ## License
 The package is License under (MIT).
