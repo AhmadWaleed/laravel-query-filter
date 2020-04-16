@@ -79,7 +79,7 @@ public function index()
 $users = User::addQuery(
     (new ScopeActiveUsersQuery())->when(request()->has('active'))
 )->addQuery(
-    (new ScopeLocationUsersQuery())->when(request()->has('location'))
+    (new ScopeUsersLocationQuery())->when(request()->has('location'))
 )->get();
 
 ```
