@@ -5,7 +5,7 @@ namespace AhmedWaleed\QueryFilter;
 interface Queryable
 {
     /**
-     * Set conditition to determine when query should run
+     * Set condition to determine when query should run
      *
      * @param bool $condition
      *
